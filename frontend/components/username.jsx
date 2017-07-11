@@ -22,8 +22,6 @@ class UsernameForm extends React.Component {
   render() {
     return (
       <form className='username-form' onSubmit={ this.handleSubmit }>
-        <h1>Username</h1>
-
         <div className='username-input'>
           <input type='text'
                 className='username' 
