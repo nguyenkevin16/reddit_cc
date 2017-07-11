@@ -7,9 +7,19 @@ class UsernameForm extends React.Component {
 
   render() {
     return (
-      <section id='username-form'>
-        Username Form
-      </section>
+      <form className='username-form' onSubmit={ this.handleSubmit }>
+        <h1>Username</h1>
+
+        <div className='username-input'>
+          <input type='text'
+                className='username' 
+                onChange={ this.handleChange } 
+                value={ this.state.formula } />
+          <input type="submit" 
+                value="Submit" 
+                className='username-submit'/>
+        </div>
+      </form>
     );
   }
 }
