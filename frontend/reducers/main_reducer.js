@@ -9,7 +9,7 @@ import { merge } from 'lodash';
 const _defaultState = {
   username: '',
   type: 'NONE',
-  main: []
+  content: []
 };
 
 const mainReducer = (state = _defaultState, action) => {
@@ -26,14 +26,14 @@ const mainReducer = (state = _defaultState, action) => {
     case RECEIVE_POSTS:
       nextState = merge({}, state, {
         type: 'POSTS',
-        main: action.posts
+        content: action.posts
       });
 
       return nextState;
     case RECEIVE_COMMENTS:
       nextState = merge({}, state, {
         type: 'COMMENTS',
-        main: action.comments
+        content: action.comments
       });
 
       return nextState;
