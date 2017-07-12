@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 
 import App from './app';
 import configureStore from './store/store';
+import {
+  fetchPosts,
+  fetchComments } from './actions/main_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const store = configureStore();
@@ -11,5 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Testing Start
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
   // Testing End
 });
