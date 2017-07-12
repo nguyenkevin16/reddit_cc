@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Testing Start
   window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  window.fetchPosts = store.dispatch(fetchPosts);
+  window.fetchComments = store.dispatch(fetchComments);
   // Testing End
 });
