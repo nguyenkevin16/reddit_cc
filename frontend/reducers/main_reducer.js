@@ -1,13 +1,15 @@
 // frontend/reducers/main_reducer.js
 
-import { RECEIVE_POSTS,
+import { RECEIVE_USERNAME,
+         RECEIVE_POSTS,
          RECEIVE_COMMENTS,
          CLEAR_STATE } from '../actions/main_actions';
 import { merge } from 'lodash';
 
 const _defaultState = {
-  currentUser: null,
-  errors: []
+  username: '',
+  type: 'NONE',
+  main: []
 };
 
 const mainReducer = (state = _defaultState, action) => {
@@ -15,17 +17,23 @@ const mainReducer = (state = _defaultState, action) => {
   let nextState;
 
   switch(action.type) {
+    case RECEIVE_USERNAME:
+      nextState = merge({}, state, {
+        username: action.username
+      });
+
+      return nextState;
     case RECEIVE_POSTS:
       nextState = merge({}, state, {
         type: 'POSTS',
-        posts: action.posts
+        main: action.posts
       });
 
       return nextState;
     case RECEIVE_COMMENTS:
       nextState = merge({}, state, {
         type: 'COMMENTS',
-        posts: action.comments
+        main: action.comments
       });
 
       return nextState;
